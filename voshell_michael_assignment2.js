@@ -41,25 +41,31 @@ var thinkUp = function () {
             console.log ("good thing cuz 1 day was too many")
             return upYet;
             } else {
-                var daysDown = 3
-                    // while loop
-                     while (daysDown > 0) {
-                       var myConfirm = confirm ("do you think it'll be up tomorrow?")
-                            if (myConfirm === true) {
-                             } else {
-                                console.log ("it sure is a pain to have the system dowm for " + daysDown + " more days")
-                                daysDown--;
-                       
-                    
-                
-                        };
-                    };
+                if (upYet === false ) {
+                    console.log ("3 down days ")
+                    return upYet;
+                };
             };
+};
+
+var daysDown = function () {
+    // while loop
+    var daysDown = 3
+        while (daysDown > 0) {
+        console.log ("it sure is a pain to have the system dowm for " + daysDown + " more days")
+            daysDown--;
         };
+
+};
 
 
 systemUp()
 thinkUp()
-    var wereUp = thinkUp()
-console.log (wereUp)
+daysDown()
+
+
+
+
+
+
 
