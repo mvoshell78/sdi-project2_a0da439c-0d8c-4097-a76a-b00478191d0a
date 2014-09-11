@@ -7,10 +7,14 @@
 
 var mhName = "Bev"
 var tripTime = 3
+var numberOfDaysDown = 4
+
 
 console.log( " Our Computer systems at work crashed on Sat ")
 console.log( "it's been a very hectic week to say the least because of it ")
 console.log( " I have to drive to Laurel, DE over " + tripTime + " hours round trip, every nght")
+
+// functions
 
 //  Prompt Arguement
 //  Procedure
@@ -34,34 +38,52 @@ var systemUp = function () {
 // Confirm Argument
 // Boolean Function 
  
-var thinkUp = function () {
-    var upYet = confirm ( "do you think it'll be up tomorrow?")
-        // we were down for three days
-        if (upYet === true ) {
-            console.log ("good thing cuz 1 day was too many")
-            return upYet;
-            } else {
-                if (upYet === false ) {
+var thinkUp = function(upYet) {
+   if (upYet === true ) {
+        console.log ("good thing cuz 1 day was too many")
+        return upYet;
+        } else {
+            if (upYet === false ) {
+            // while-loop
+                var daysDown = 3
+                while (daysDown > 0) {
+                console.log ("it sure is a pain to have the system dowm for " + daysDown + " more days")
+                daysDown--;
+                };
                     console.log ("3 down days ")
                     return upYet;
-                };
             };
-};
-
-var daysDown = function () {
-    // while loop
-    var daysDown = 3
-        while (daysDown > 0) {
-        console.log ("it sure is a pain to have the system dowm for " + daysDown + " more days")
-            daysDown--;
-        };
-
-};
+            };
+            };
 
 
-systemUp()
-thinkUp()
-daysDown()
+// number funtion
+// for-loop
+
+var totalTimeDown = function (numberOfDaysDown) {
+    var timeDownInHours = ( hoursInADay * numberOfDaysDown)
+    console.log (timeDownInHours)
+    time = timeDownInHours
+        return time;
+    
+    
+    };
+
+
+
+// Main Code
+
+//systemUp()
+// var upYet = confirm ( "do you think it'll be up tomorrow?")
+//thinkUp(upYet)
+//var tUp = thinkUp()
+   // console.log (tUp)
+
+totalTimeDown(numberOfDaysDown)
+var timeDown = totalTimeDown(numberOfDaysDown);
+    console.log (timeDown + " is way too many hours to be down.")
+    
+
 
 
 
