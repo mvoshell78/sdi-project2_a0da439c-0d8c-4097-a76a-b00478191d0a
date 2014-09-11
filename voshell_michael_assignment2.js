@@ -39,21 +39,18 @@ var thinkUp = function () {
         // we were down for three days
         if (upYet === true ) {
             console.log ("good thing cuz 1 day was too many")
-            return
-            //the system will be up tomorrow so there is no need to loop 
+            return upYet;
             } else {
-                
-                var upYet = 3
-                // while loop
-                     while (upYet > 0) {
+                var daysDown = 3
+                    // while loop
+                     while (daysDown > 0) {
                        var myConfirm = confirm ("do you think it'll be up tomorrow?")
                             if (myConfirm === true) {
-                             // early return makes sence if the system is up
-                             return
                              } else {
-                    console.log ("it sure is a pain to have the system dowm for " + upYet + " more days")
-                     upYet--;
+                                console.log ("it sure is a pain to have the system dowm for " + daysDown + " more days")
+                                daysDown--;
                        
+                    
                 
                         };
                     };
@@ -63,3 +60,6 @@ var thinkUp = function () {
 
 systemUp()
 thinkUp()
+    var wereUp = thinkUp()
+console.log (wereUp)
+
