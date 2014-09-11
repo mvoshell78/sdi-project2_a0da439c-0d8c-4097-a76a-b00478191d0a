@@ -10,11 +10,7 @@ var problem1 = "Our Comcast modem is fried"
 var problem2 = "our juniper device has burnt ports. "
 var tripTime = 3
 var numberOfDaysDown = 4
-
-
-console.log( " Our Computer systems at work crashed on Sat ")
-console.log( "it's been a very hectic week to say the least because of it ")
-console.log( " I have to drive to Laurel, DE over " + tripTime + " hours round trip, every nght")
+var say = function(message) {console.log(message); };// simplified console log
 
 // functions
 
@@ -33,30 +29,30 @@ var systemUp = function () {
                 } else {
                     console.log ( "Stop playing around we have work to do" ) }
         
-                };
-            };
-        };
+                };  // else if
+            };// my prompt
+        };// close function
  
 // Confirm Argument
 // Boolean Function 
  
 var thinkUp = function(upYet) {
    if (upYet === true ) {
-        console.log ("good thing cuz 1 day was too many")
+        say("good thing cuz 1 day is too many")
         return upYet;
         } else {
             if (upYet === false ) {
             // while-loop
-                var daysDown = 3
+                var daysDown = 4
                 while (daysDown > 0) {
-                console.log ("it sure is a pain to have the system dowm for " + daysDown + " more days")
+                say("It sure is a pain to have the system dowm for " + daysDown + " more days")
                 daysDown--;
-                };
-                    console.log ("3 down days ")
+                };// while
+                    say("4 down days ")
                     return upYet;
-            };
-            };
-            };
+            };// if upYet = false
+            };//  else
+            };// close function
 
 
 // number funtion
@@ -64,16 +60,14 @@ var thinkUp = function(upYet) {
 
 var totalTimeDown = function (numberOfDaysDown) {
     var hoursInADay = 24
-    var timeDownInHours = ( hoursInADay * numberOfDaysDown)
-    // console.log (timeDownInHours)
-    for (time = 96; time > 0; time--) {
-        console.log ( time + " more hours to go I can't believe how long this is")
-        };
-    time = timeDownInHours
-        return time;
+        for (time = (hoursInADay * numberOfDaysDown); time > 0; time--) {
+            say( time + " more hours to go I can't believe how long this is")
+         }; // close loop
+    
+       return time;
     
     
-    };
+    }; // close function 
 
 //string function
 
@@ -83,22 +77,54 @@ var whatHappened = function (problem1, problem2) {
    var totalProblem = (cause + problem1 + ", " + "and " + problem2 );
   // console.log (totalProblem)
   return totalProblem
+};   // close function
     
-    
-    
-};
+  
+
 // Main Code
+
+say ( " Our Computer systems at work crashed on Sat ")
+say ( "it's been a very hectic week to say the least because of it ")
+say ( " I have to drive to Laurel, DE over " + tripTime + " hours round trip, every nght")
+
+
 systemUp()
-var upYet = confirm ( "do you think it'll be up tomorrow?")
+
+var upYet = confirm ( "Do you think it'll be up before Wednesday?")
+
 thinkUp(upYet)
-var tUp = thinkUp(upYet)
-   console.log (tUp)
-totalTimeDown(numberOfDaysDown)
-var timeDown = totalTimeDown(numberOfDaysDown);
-    console.log (timeDown + " is way too many hours to be down.")
+var tUp = thinkUp(upYet) // boolean conditon for upyet function
+   if (tUp === true ) {
+    say(" It'll good to be back up" )
+    } else {
+    say('To bad so sad')
+   };
+  
+// added a confirm to help the story flow alittle 
+var feelings = confirm ("do you want to see how long it feels to have the system down for so long?")
+    if (feelings === true ) {
+        totalTimeDown(numberOfDaysDown)
+    }else{
+        say("That's no fun")
+        totalTimeDown(numberOfDaysDown)
+    }// end else
+
+    var timeDown = totalTimeDown(numberOfDaysDown);
+    say(timeDown + " hours! Yea we're back up and running.")
+    
 whatHappened(problem1, problem2)
-var string = whatHappened(problem1, problem2)
-console.log (string)
+
+// added additional confrim to interact with the story
+var wHapp = confirm ("Would you like to know what happened?")
+    if (wHapp === true) {
+      var string = whatHappened(problem1, problem2)
+      say(string)  
+    } else {
+        say (" Well it would be good to tell you any way to prevent future issues.")
+        var string = whatHappened(problem1, problem2)
+        say(string);
+        };// end else
+
 
 
 
