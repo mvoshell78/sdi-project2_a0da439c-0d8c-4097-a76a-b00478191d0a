@@ -6,6 +6,8 @@
 // Varibales
 
 var mhName = "Bev"
+var problem1 = "Our Comcast modem is fried"
+var problem2 = "our juniper device has burnt ports. "
 var tripTime = 3
 var numberOfDaysDown = 4
 
@@ -61,29 +63,42 @@ var thinkUp = function(upYet) {
 // for-loop
 
 var totalTimeDown = function (numberOfDaysDown) {
+    var hoursInADay = 24
     var timeDownInHours = ( hoursInADay * numberOfDaysDown)
-    console.log (timeDownInHours)
+    // console.log (timeDownInHours)
+    for (time = 96; time > 0; time--) {
+        console.log ( time + " more hours to go I can't believe how long this is")
+        };
     time = timeDownInHours
         return time;
     
     
     };
 
+//string function
 
-
+var whatHappened = function (problem1, problem2) {
+  
+   var cause = " lightening stuck our building, ";
+   var totalProblem = (cause + problem1 + ", " + "and " + problem2 );
+  // console.log (totalProblem)
+  return totalProblem
+    
+    
+    
+};
 // Main Code
-
-//systemUp()
-// var upYet = confirm ( "do you think it'll be up tomorrow?")
-//thinkUp(upYet)
-//var tUp = thinkUp()
-   // console.log (tUp)
-
+systemUp()
+var upYet = confirm ( "do you think it'll be up tomorrow?")
+thinkUp(upYet)
+var tUp = thinkUp(upYet)
+   console.log (tUp)
 totalTimeDown(numberOfDaysDown)
 var timeDown = totalTimeDown(numberOfDaysDown);
     console.log (timeDown + " is way too many hours to be down.")
-    
-
+whatHappened(problem1, problem2)
+var string = whatHappened(problem1, problem2)
+console.log (string)
 
 
 
