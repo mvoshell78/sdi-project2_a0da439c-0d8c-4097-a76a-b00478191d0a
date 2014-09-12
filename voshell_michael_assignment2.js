@@ -92,10 +92,10 @@ systemUp()
 
 var upYet = confirm ( "Do you think it'll be up before Wednesday?")
 
-thinkUp(upYet)
+
 var tUp = thinkUp(upYet) // boolean conditon for upyet function
    if (tUp === true ) {
-    say(" It'll good to be back up" )
+    say(" It'll be good to be back up" )
     } else {
     say('To bad so sad')
    };
@@ -103,15 +103,18 @@ var tUp = thinkUp(upYet) // boolean conditon for upyet function
 // added a confirm to help the story flow alittle 
 var feelings = confirm ("do you want to see how long it feels to have the system down for so long?")
     if (feelings === true ) {
-        totalTimeDown(numberOfDaysDown)
+      var timeDown =  totalTimeDown(numberOfDaysDown)
+        say(timeDown + " hours! Yea we're back up and running.")
     }else{
+        
         say("That's no fun")
-        totalTimeDown(numberOfDaysDown)
+        var timeDown = totalTimeDown(numberOfDaysDown)
+        say(timeDown + " hours! Yea we're back up and running.")
     }// end else
 
-    var timeDown = totalTimeDown(numberOfDaysDown);
-    say(timeDown + " hours! Yea we're back up and running.")
+
     
+  
 whatHappened(problem1, problem2)
 
 // added additional confrim to interact with the story
